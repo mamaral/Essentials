@@ -76,7 +76,7 @@
 		271FB7A01B9510E000E12917 = {
 			isa = PBXGroup;
 			children = (
-				271FB7AB1B9510E000E12917 /* Essentials */,
+				271FB7AB1B9510E000E12917 /* Demo */,
 				271FB7C51B9510E000E12917 /* EssentialsTests */,
 				271FB7D01B9510E000E12917 /* EssentialsUITests */,
 				271FB7AA1B9510E000E12917 /* Products */,
@@ -93,7 +93,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		271FB7AB1B9510E000E12917 /* Essentials */ = {
+		271FB7AB1B9510E000E12917 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				271FB7AF1B9510E000E12917 /* AppDelegate.h */,
@@ -101,6 +101,7 @@
 				271FB7E11B95117A00E12917 /* Misc */,
 				271FB7AC1B9510E000E12917 /* Supporting Files */,
 			);
+			name = Demo;
 			path = Essentials;
 			sourceTree = "<group>";
 		};
@@ -477,6 +478,7 @@
 				271FB7D81B9510E000E12917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271FB7D91B9510E000E12917 /* Build configuration list for PBXNativeTarget "EssentialsTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +487,7 @@
 				271FB7DB1B9510E000E12917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271FB7DC1B9510E000E12917 /* Build configuration list for PBXNativeTarget "EssentialsUITests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +496,7 @@
 				271FB7DE1B9510E000E12917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
