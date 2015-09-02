@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27040C351B966E33002B1D5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27040C341B966E33002B1D5E /* ViewController.m */; };
 		271FB7AE1B9510E000E12917 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FB7AD1B9510E000E12917 /* main.m */; };
 		271FB7B11B9510E000E12917 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FB7B01B9510E000E12917 /* AppDelegate.m */; };
 		271FB7B91B9510E000E12917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271FB7B81B9510E000E12917 /* Assets.xcassets */; };
 		271FB7C71B9510E000E12917 /* EssentialsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FB7C61B9510E000E12917 /* EssentialsTests.m */; };
 		271FB7D21B9510E000E12917 /* EssentialsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FB7D11B9510E000E12917 /* EssentialsUITests.m */; };
-		271FB7E01B95115D00E12917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271FB7DF1B95115D00E12917 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		271FB7E01B95115D00E12917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271FB7DF1B95115D00E12917 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27040C331B966E33002B1D5E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27040C341B966E33002B1D5E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		271FB7A91B9510E000E12917 /* Essentials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Essentials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271FB7AD1B9510E000E12917 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		271FB7AF1B9510E000E12917 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,7 +101,8 @@
 			children = (
 				271FB7AF1B9510E000E12917 /* AppDelegate.h */,
 				271FB7B01B9510E000E12917 /* AppDelegate.m */,
-				271FB7E11B95117A00E12917 /* Misc */,
+				27040C331B966E33002B1D5E /* ViewController.h */,
+				27040C341B966E33002B1D5E /* ViewController.m */,
 				271FB7AC1B9510E000E12917 /* Supporting Files */,
 			);
 			name = Demo;
@@ -108,6 +112,9 @@
 		271FB7AC1B9510E000E12917 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				271FB7B81B9510E000E12917 /* Assets.xcassets */,
+				271FB7DF1B95115D00E12917 /* LaunchScreen.storyboard */,
+				271FB7BD1B9510E000E12917 /* Info.plist */,
 				271FB7AD1B9510E000E12917 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -129,16 +136,6 @@
 				271FB7D31B9510E000E12917 /* Info.plist */,
 			);
 			path = EssentialsUITests;
-			sourceTree = "<group>";
-		};
-		271FB7E11B95117A00E12917 /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				271FB7B81B9510E000E12917 /* Assets.xcassets */,
-				271FB7DF1B95115D00E12917 /* LaunchScreen.storyboard */,
-				271FB7BD1B9510E000E12917 /* Info.plist */,
-			);
-			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27040C351B966E33002B1D5E /* ViewController.m in Sources */,
 				271FB7B11B9510E000E12917 /* AppDelegate.m in Sources */,
 				271FB7AE1B9510E000E12917 /* main.m in Sources */,
 			);
@@ -394,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Essentials/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.Essentials;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Essentials/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.Essentials;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +416,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = EssentialsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.EssentialsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +429,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = EssentialsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.EssentialsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
