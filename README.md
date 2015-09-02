@@ -4,8 +4,8 @@ My goal for this project is to accumulate all of the interesting shortcuts, tips
 
 # Table of Contents
 
-* [UIKit](#UIKit)
-  * [UIView](#UIView)
+* [UIKit](#uikit)
+  * [UIView](#uiview)
     * [Rounded View With Shadow](#rounded-view-with-shadow) 
 
   
