@@ -24,6 +24,7 @@ static CGFloat const kAvatarSize = 150.0;
     [super viewDidLoad];
 
     [self createRoundedImageViewWithShadow];
+    [self addGestureRecognizerToImageView];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -47,6 +48,20 @@ static CGFloat const kAvatarSize = 150.0;
     self.imageView.clipsToBounds = YES;
     self.imageView.layer.cornerRadius = kAvatarSize / 2.0;
     [self.shadowView addSubview:self.imageView];
+}
+
+- (void)addGestureRecognizerToImageView {
+    // If we don't override the default NO value (NO is only the default for UIImageView - WHY APPLE?!)
+    // our gesture recognizer won't work.
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)]];
+}
+
+
+#pragma mark - Tap gesture recognizer
+
+- (void)handleTap {
+    [[[UIAlertView alloc] initWithTitle:@"Testing" message:@"123" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] show];
 }
 
 @end
