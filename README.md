@@ -8,7 +8,7 @@ My goal for this project is to accumulate all of the interesting shortcuts, tips
   * [UIView](#uiview)
     * [Rounded View With Shadow](#rounded-view-with-shadow)
   * [UIImageView](#uiimageview)
-    * [UITapGestureRecognizer not working?](#uitapgesturerecognizer-not-working?)
+    * [UITapGestureRecognizer not working?](#uitapgesturerecognizer-not-working)
 
   
 # UIKit
