@@ -29,7 +29,6 @@ static CGFloat const kAvatarSize = 150.0;
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
 
-    // Rounded image view with shadow
     self.shadowView.frame = CGRectMake(CGRectGetMidX(self.view.frame) - (kAvatarSize / 2.0), kPadding, kAvatarSize, kAvatarSize);
     self.imageView.frame = CGRectMake(0, 0, kAvatarSize, kAvatarSize);
 }
@@ -48,14 +47,6 @@ static CGFloat const kAvatarSize = 150.0;
     self.imageView.clipsToBounds = YES;
     self.imageView.layer.cornerRadius = kAvatarSize / 2.0;
     [self.shadowView addSubview:self.imageView];
-
-//    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar"]];
-////    self.imageView.layer.masksToBounds = YES;
-//    self.imageView.layer.cornerRadius = kAvatarSize / 2.0;
-//    self.imageView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-//    self.imageView.layer.shadowOpacity = 0.9;
-//    self.imageView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-//    [self.view addSubview:self.imageView];
 }
 
 @end
