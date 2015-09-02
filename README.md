@@ -38,7 +38,7 @@ Well the shadow looks OK, but square avatars were *so 2011*. Looks like I forgot
 
 ![fail2](Screenshots/2.png)
 
-Great, now we.... wait, where'd the shadow go? It's always about this point I realize I've forgotten ***for the nth time*** that the problem with the above code is that in order to get your view to be rounded, you need to either set the view's `clipsToBounds` or your view's layer's `masksToBounds`** properties to `YES`, but that effectively clips/masks your shadow.
+Great, now we.... wait, where'd the shadow go? It's always about this point I realize I've forgotten ***for the nth time*** that the problem with the above code is that in order to get your view to be rounded, you need to either set the view's `clipsToBounds` or your view's layer's `masksToBounds` properties to `YES`, but that effectively clips/masks your shadow.
 
 The solution to our problem is a slightly annoying one, but easily done - create **two** views, one that will display the shadow, and one that will show your content appropriately rounded:
 
@@ -55,4 +55,4 @@ The solution to our problem is a slightly annoying one, but easily done - create
 
 ![fail2](Screenshots/3.png)
 
-**I was interested to know what the difference between `view.clipsToBounds` and `view.layer.masksToBounds` was, as they seemed to achieve the exact same thing. I stumbled across [this answer](http://stackoverflow.com/a/1177978/3132984) to exactly that question. Turns out, they *basically are the same thing*. Under the covers, `UIView`'s `clipsToBounds` calls `CALayer`'s `masksToBounds`.
+>I was interested to know what the difference between `view.clipsToBounds` and `view.layer.masksToBounds` was, as they seemed to achieve the exact same thing. I stumbled across [this answer](http://stackoverflow.com/a/1177978/3132984) to exactly that question. Turns out, they *basically are the same thing*. Under the covers, `UIView`'s `clipsToBounds` calls `CALayer`'s `masksToBounds`.
