@@ -2,16 +2,18 @@
 
 My goal for this project is to accumulate all of the interesting shortcuts, tips, solutions to problems easy or hard, and anything else I feel is worth sharing and archiving, for both myself and the iOS developer community at large to have as a reference. I willing be adding new information here seemingly at random, as interesting or useful bits of information come to mind, and this will likely be a forever *work in progress*.
 
+# Table of Contents
+
 * [UIKit](#UIKit)
   * [UIView](#UIView)
-    * [Rounded View With Shadow](#rounded-view-shadow) 
+    * [Rounded View With Shadow](#rounded-view-with-shadow) 
 
   
-  ## UIKit
+# UIKit
   
-  ### UIView
+## UIView
   
-  #### Rounded view with shadow
+### Rounded view with shadow
 
 It seems like in most of the apps I work on these days include a number of [UIView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/) designs that have both radiused corners, as well as a drop shadow. For example, I'm designing a sleek new profile page, and want to feature my user's avatar with a nice circular shape, that should be pretty simple, right? I'll just set the `cornerRadius` and customize the shadow properties on my view's `layer`, throw it in my view controller, and we should be all set.
 
