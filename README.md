@@ -21,7 +21,7 @@ My goal for this project is to accumulate all of the interesting shortcuts, tips
 
 # Xcode
 
-## View UI Hiearchy
+## View UI Hierarchy
 
 This is one of my personal favorite Xcode features, that has saved my butt probably hours of debugging time. While running your app in the simulator, select the `Debug Navigator` tab on the left-hand menu, click the sideways-hamburger-looking icon (I still have no idea what that icon is), and select `Show UI Hierarchy`:
 
