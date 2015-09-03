@@ -14,6 +14,7 @@
 		271FB7C71B9510E000E12917 /* EssentialsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FB7C61B9510E000E12917 /* EssentialsTests.m */; };
 		271FB7D21B9510E000E12917 /* EssentialsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271FB7D11B9510E000E12917 /* EssentialsUITests.m */; };
 		271FB7E01B95115D00E12917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271FB7DF1B95115D00E12917 /* LaunchScreen.storyboard */; };
+		27C9096E1B97C364007BFB13 /* MyPersonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C9096D1B97C364007BFB13 /* MyPersonObject.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		271FB7D11B9510E000E12917 /* EssentialsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EssentialsUITests.m; sourceTree = "<group>"; };
 		271FB7D31B9510E000E12917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271FB7DF1B95115D00E12917 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27C9096C1B97C364007BFB13 /* MyPersonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPersonObject.h; sourceTree = "<group>"; };
+		27C9096D1B97C364007BFB13 /* MyPersonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPersonObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				271FB7B01B9510E000E12917 /* AppDelegate.m */,
 				27040C331B966E33002B1D5E /* ViewController.h */,
 				27040C341B966E33002B1D5E /* ViewController.m */,
+				27C9096C1B97C364007BFB13 /* MyPersonObject.h */,
+				27C9096D1B97C364007BFB13 /* MyPersonObject.m */,
 				271FB7AC1B9510E000E12917 /* Supporting Files */,
 			);
 			name = Demo;
@@ -270,6 +275,7 @@
 				27040C351B966E33002B1D5E /* ViewController.m in Sources */,
 				271FB7B11B9510E000E12917 /* AppDelegate.m in Sources */,
 				271FB7AE1B9510E000E12917 /* main.m in Sources */,
+				27C9096E1B97C364007BFB13 /* MyPersonObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

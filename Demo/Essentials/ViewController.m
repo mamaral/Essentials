@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MyPersonObject.h"
 
 static CGFloat const kPadding = 30.0;
 static CGFloat const kAvatarSize = 150.0;
@@ -25,13 +26,13 @@ static CGFloat const kAvatarSize = 150.0;
 
     [self createRoundedImageViewWithShadow];
     [self addGestureRecognizerToImageView];
+    [self createSomeObjects];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
 
     self.shadowView.frame = CGRectMake(CGRectGetMidX(self.view.frame) - (kAvatarSize / 2.0), kPadding, kAvatarSize, kAvatarSize);
-    self.imageView.frame = CGRectMake(0, 0, kAvatarSize, kAvatarSize);
 }
 
 
@@ -62,6 +63,72 @@ static CGFloat const kAvatarSize = 150.0;
 
 - (void)handleTap {
     [[[UIAlertView alloc] initWithTitle:@"Testing" message:@"123" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] show];
+}
+
+
+#pragma mark - Object creation shortcuts
+
+- (void)createSomeObjects {
+    // Old and busted
+    NSObject *object = [[NSObject alloc] init];
+    NSNumber *number = [[NSNumber alloc] initWithInteger:1];
+    NSNumber *boolNumber = [[NSNumber alloc] initWithBool:NO];
+    NSArray *array = [[NSArray alloc] initWithObjects:object, number, boolNumber, nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:object, @"key1", number, @"key2", nil];
+
+    // New hotness
+    object = [NSObject new];
+    number = @1;
+    boolNumber = @YES;
+    array = @[object, number, boolNumber];
+    dictionary = @{@"key": object};
+
+    MyPersonObject *personA = [MyPersonObject new];
+    personA.name = @"Michael";
+    personA.favoriteColor = @"red";
+    personA.age = 26;
+
+    MyPersonObject *personB = [MyPersonObject new];
+    personB.name = @"Suzie";
+    personB.favoriteColor = @"orange";
+    personB.age = 4;
+
+    MyPersonObject *personC = [MyPersonObject new];
+    personC.name = @"Meghan";
+    personC.favoriteColor = @"purple";
+    personC.age = 23;
+
+    MyPersonObject *personD = [MyPersonObject new];
+    personD.name = @"Karen";
+    personD.favoriteColor = nil;
+    personD.age = -2;
+
+    NSArray *people = @[personA, personB, personC, personD];
+
+    NSLog(@"%@", people.debugDescription);
+}
+
+
+#pragma mark - CGRect shortcuts
+
+- (void)createSomeFrames {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 50, 100, 75)];
+
+    // Old and busted
+    CGFloat xOrigin = view.frame.origin.x;
+    CGFloat yOrigin = view.frame.origin.y;
+    CGFloat width = view.frame.size.width;
+    CGFloat height = view.frame.size.height;
+    CGFloat maxX = view.frame.origin.x + view.frame.size.width;
+    CGFloat maxY = view.frame.origin.y + view.frame.size.height;
+
+    // New hotness
+    xOrigin = CGRectGetMinX(view.frame);
+    yOrigin = CGRectGetMinY(view.frame);
+    width = CGRectGetWidth(view.frame);
+    height = CGRectGetHeight(view.frame);
+    maxX = CGRectGetMaxX(view.frame);
+    maxY = CGRectGetMaxY(view.frame);
 }
 
 @end

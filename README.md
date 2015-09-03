@@ -4,12 +4,89 @@ My goal for this project is to accumulate all of the interesting shortcuts, tips
 
 # Table of Contents
 
+* [Xcode](#xcode)
+  * [View UI Hierarchy](#view-ui-hierarchy)
+* [Foundation](#foundation)
+  * [NSObject](#nsobject)
+    * [Object Initialization Shortcuts](#object-initialization-shortcuts)  
+    * [Custom Debug Descriptions](#custom-debug-descriptions)  
 * [UIKit](#uikit)
   * [UIView](#uiview)
     * [Rounded View With Shadow](#rounded-view-with-shadow)
   * [UIImageView](#uiimageview)
     * [UITapGestureRecognizer not working?](#uitapgesturerecognizer-not-working)
+* [Core Graphics](#core-graphics)
+  * [CGRect Shortcuts](#cgrect-shortcuts)
 
+
+# Xcode
+
+## View UI Hiearchy
+
+This is one of my personal favorite Xcode features, that has saved my butt probably hours of debugging time. While running your app in the simulator, select the `Debug Navigator` tab on the left-hand menu, click the sideways-hamburger-looking icon (I still have no idea what that icon is), and select `Show UI Hierarchy`:
+
+![ui-hierarchy](Screenshots/ui-hierarchy.png)
+
+After a short delay, this will give you a ***SWEET*** live interactive view of the view you're looking at in the simulator, giving you the ability to debug any weird UI layout issues you may be having:
+
+![ui-hierarchy](Screenshots/ui-hierarchy.gif)
+
+# Foundation
+  
+## NSObject
+
+### Object Initialization Shortcuts
+
+I'm baffled that in so much of the code I see these days that's been written *recently*, people are still using the older initialization conventions for various classes:
+
+    NSObject *object = [[NSObject alloc] init];
+    NSNumber *number = [[NSNumber alloc] initWithInteger:1];
+    NSNumber *boolNumber = [[NSNumber alloc] initWithBool:NO];
+    NSArray *array = [[NSArray alloc] initWithObjects:object, number, boolNumber, nil];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:object, @"key", nil];
+    
+For christ's sake, there's a better way!
+
+    NSObject *object = [NSObject new];
+    NSNumber *number = @1; // or if you have a primitive var, wrap it in parens: @(foo)
+    NSNumber *boolNumber = @YES;
+    NSArray *array = @[object, number, boolNumber];
+    NSDictionary *dictionary = @{@"key": object};
+  
+### Custom Debug Descriptions
+
+Ever get deep into debugging some obscure issue with your custom `NSObject` subclasses, sitting at a breakpoint, excited that you think you've finally tracked down the bug, you print out the variable in the console and get this:
+
+    (lldb) po person
+    <MyPersonObject: 0x7fb5c8c35c90>
+
+Or perhaps you have an array of people and need to figure out which one has the bad data?
+
+    (lldb) po people
+    <__NSArrayI 0x7f83fa50f0a0>(
+    <MyPersonObject: 0x7f83fa424810>,
+    <MyPersonObject: 0x7f83fa424910>,
+    <MyPersonObject: 0x7f83fa424930>
+    )
+    
+Well that's not very useful, is it? I'll tell you, it was a happy day when I discovered that you can override what Xcode outputs to the console when you use the `po` command while debugging, simply by implementing `debugDescription` in your subclass:
+
+    - (NSString *)debugDescription {
+        return [NSString stringWithFormat:@"name: %@, favorite color: %@, age: %ld", self.name, self.favoriteColor, (long)self.age];
+    }
+
+Xcode will now output useful debugging information nice and neatly for you:
+
+    (lldb) po person
+    name: Michael, favorite color: red, age: 26
+
+    (lldb) po people
+    <__NSArrayI 0x7ffa599017a0>(
+       name: Michael, favorite color: red, age: 26,
+       name: Suzie, favorite color: orange, age: 4,
+       name: Meghan, favorite color: purple, age: 23,
+       name: Karen, favorite color: (null), age: -2
+    )
   
 # UIKit
   
@@ -75,3 +152,25 @@ Make sure you explicity enable user interaction on your image views if you plan 
 
     self.imageView.userInteractionEnabled = YES;
     [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doYourThing)]];
+    
+# Core Graphics
+  
+## CGRect Shortcuts
+
+I create all of my UI layouts programmatically, which can get quite verbose with more complex interfaces. Consider a `UIView` that you need to access and/or calculate information about its frame. I used to have a whole bunch of the following in my code:
+
+    CGFloat xOrigin = view.frame.origin.x;
+    CGFloat yOrigin = view.frame.origin.y;
+    CGFloat width = view.frame.size.width;
+    CGFloat height = view.frame.size.height;
+    CGFloat maxX = view.frame.origin.x + view.frame.size.width;
+    CGFloat maxY = view.frame.origin.y + view.frame.size.height;
+    
+I've since discovered a few really nice shortcuts defined in the [CGGeometry docs](https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGGeometry/#//apple_ref/c/func/CGRectGetMinX), that have made my life easier and my code much more clean and concise.
+
+    CGFloat xOrigin = CGRectGetMinX(view.frame);
+    CGFloat yOrigin = CGRectGetMinY(view.frame);
+    CGFloat width = CGRectGetWidth(view.frame);
+    CGFloat height = CGRectGetHeight(view.frame);
+    CGFloat maxX = CGRectGetMaxX(view.frame);
+    CGFloat maxY = CGRectGetMaxY(view.frame);
