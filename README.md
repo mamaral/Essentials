@@ -6,15 +6,18 @@ My goal for this project is to accumulate all of the interesting shortcuts, tips
 
 * [Xcode](#xcode)
   * [View UI Hierarchy](#view-ui-hierarchy)
+
 * [Foundation](#foundation)
   * [NSObject](#nsobject)
     * [Object Initialization Shortcuts](#object-initialization-shortcuts)  
-    * [Custom Debug Descriptions](#custom-debug-descriptions)  
+    * [Custom Debug Descriptions](#custom-debug-descriptions)
+ 
 * [UIKit](#uikit)
   * [UIView](#uiview)
     * [Rounded View With Shadow](#rounded-view-with-shadow)
   * [UIImageView](#uiimageview)
     * [UITapGestureRecognizer not working?](#uitapgesturerecognizer-not-working)
+
 * [Core Graphics](#core-graphics)
   * [CGRect Shortcuts](#cgrect-shortcuts)
 
